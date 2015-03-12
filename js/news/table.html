@@ -1,0 +1,20 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Votes</th>
+      <th>Image</th>
+      <th>Post Date</th>
+      <th>Title</th>
+      <th>Submitted By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="news in news.data">
+      <td>{{news.votes.up - news.votes.down}}</td>
+      <td><img ng-src="{{news.imageUrl}}"></td>
+      <td>{{news.postDate}}</td>
+      <td><a href="{{news.linkUrl}}" target="_blank">{{news.title}}</a></td>
+      <td>{{news.submittedBy}}</td>
+    </tr>
+  </tbody>
+</table>
