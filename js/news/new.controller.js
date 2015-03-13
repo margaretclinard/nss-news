@@ -8,6 +8,9 @@ function NewArticleCtrl($http, $location) {
   vm.newArticle = {};
 
   vm.submit = function () {
+    vm.newArticle.postDate = (new Date()).toJSON();
+    vm.newArticle.submittedBy = 'Anonymous';
+
     $http
     .post('https://nss-news.firebaseio.com/articles.json', vm.newArticle)
     .success(function () {
