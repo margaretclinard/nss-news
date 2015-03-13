@@ -1,4 +1,17 @@
 table img {
-  max-width: 100px;
-  max-width: 100px;
+  max-width: 75px;
+  max-width: 75px;
+}
+
+.table--updown span, .table--updown i {
+  display: block;
+  text-align: center;
+}
+
+.table--updown i:first-child:hover {
+  color: green;
+}
+
+.table--updown i:last-child:hover {
+  color: red;
 }
