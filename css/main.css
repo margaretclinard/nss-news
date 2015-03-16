@@ -10,8 +10,27 @@ table img {
 
 .table--updown i:first-child:hover {
   color: green;
+  transition: 0.5s linear;
+  font-size: 2em;
 }
 
 .table--updown i:last-child:hover {
   color: red;
+  transition: 0.5s linear;
+  font-size: 2em;
+}
+
+.table--updown i {
+  color: lightgrey;
+  transition: 0.5s linear;
+}
+
+.up i:first-child {
+  color: green;
+  opacity: 0.5;
+}
+
+.down i:last-child {
+  color: red;
+  opacity: 0.5;
 }

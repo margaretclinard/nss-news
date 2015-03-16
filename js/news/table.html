@@ -9,8 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="a in table.articles">
-      <td class="table--updown"><i class="fa fa-thumbs-up"></i><span>{{a.votes.up - a.votes.down}}</span><i class="fa fa-thumbs-down"></i></td>
+    <tr ng-repeat="(id, a) in table.articles" ng-class="{up: table.usersVotes[id] === 'up', down: table.usersVotes[id] === 'down'}">
+      <td class="table--updown">
+        <i ng-click="table.vote('up', id)" class="fa fa-thumbs-up"></i>
+        <span>{{a.votes.up - a.votes.down}}</span>
+        <i class="fa fa-thumbs-down" ng-click="table.vote('down', id)"></i>
+      </td>
       <td><a href="{{a.linkUrl}}" target="_blank"><img ng-src="{{a.imageUrl}}"></a></td>
       <td><a href="{{a.linkUrl}}" target="_blank">{{a.title}}</a></td>
       <td>{{a.submittedBy}}</td>

@@ -10,6 +10,7 @@ function NewArticleCtrl($http, $location) {
   vm.submit = function () {
     vm.newArticle.postDate = (new Date()).toJSON();
     vm.newArticle.submittedBy = 'Anonymous';
+    vm.newArticle.votes = {up: 0, down: 0};
 
     $http
     .post('https://nss-news.firebaseio.com/articles.json', vm.newArticle)
